@@ -1,0 +1,250 @@
+{
+  "0": {
+    "page": "navbar",
+    "id": "0",
+    "logo": "/logo.png",
+    "menu": [
+      { "name": "Home", "link": "/" },
+      { "name": "About", "link": "/about" },
+      { "name": "Gallery", "link": "/gallery" },
+      { "name": "Press", "link": "/services" },
+      { "name": "Contact Us", "link": "/contact" },
+      {
+        "name": "EN",
+        "submenu": [
+          { "name": "English", "link": "/english" },
+          { "name": "Hindi", "link": "/hindi" }
+        ]
+      }
+    ]
+  },
+  "1": {
+    "page": "home",
+    "heroSlides": [
+      { "image": "/amit-1.jpg", "paragraph": "STRATEGIC POLITICAL LEADER" },
+      { "image": "/amit-2.jpeg", "paragraph": "EFFECTIVE ADMINISTRATOR" },
+      { "image": "/amit-4.jpeg", "paragraph": "PARLIAMENTARY EXPERIENCE" }
+    ],
+    "aboutCompany": {
+      "thumbnail": "/amit-1.jpeg",
+      "video": "/amit.mp4",
+      "paragraph": "Home Minister Shri Amit Shah Speaking on the Ideology of the BJP"
+    },
+    "impactSection": {
+      "circle": {
+        "title": "40 years in Public Life",
+        "desc": "Journey from a polling booth worker to Union Home Minister",
+        "dropdown": "Extra details about his 40 years journey in politics and public service."
+      },
+      "cards": [
+        {
+          "title": "People’s Person",
+          "desc": "25 years as elected representatives serving people as MLA, MP-RS, MP-LS",
+          "dropdown": "Additional info about People’s Person..."
+        },
+        {
+          "title": "Facilitator of Change",
+          "desc": "Eight years as Minister in Gujarat Government & exemplary work as Union Minister for Home and Cooperation",
+          "dropdown": "Extra details about Change Facilitation..."
+        },
+        {
+          "title": "Contributor in Nation Building",
+          "desc": "A Firm Believer in Indian Culture & Ethos",
+          "dropdown": "He has contributed significantly in building the nation."
+        },
+        {
+          "title": "Organization Builder: Six Years as National President of BJP",
+          "desc": "Making BJP world’s largest party and building an invincible election machine",
+          "dropdown": "Leadership strategies that shaped BJP."
+        },
+        {
+          "title": "Sports Administrator",
+          "desc": "Taking Cricket & Chess in Gujarat to greater heights",
+          "dropdown": "Achievements in sports development."
+        },
+        {
+          "title": "Pioneer of Cooperative Moment in Gujarat",
+          "desc": "Important role in bringing cooperative moment at the centre stage of Gujarat Economy",
+          "dropdown": "Expanded cooperatives at national level."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "year": 2001,
+        "title": "National Coordinator, Cooperative Wing, BJP",
+        "desc": "In 2001, Amit Shah was appointed as the National Coordinator of the Cooperative Wing of Bharatiya Janta Party. During this...",
+        "img": "/amit-1.jpeg"
+      },
+      {
+        "year": 2002,
+        "title": "Political Journey Continues",
+        "desc": "In 2002, he took part in major state-level campaigns and strengthened the party structure.",
+        "img": "/amit-2.jpeg"
+      },
+      {
+        "year": 2006,
+        "title": "Leadership Role",
+        "desc": "In 2006, he expanded his leadership role within the organization.",
+        "img": "/amit-3.jpeg"
+      },
+      {
+        "year": 2009,
+        "title": "National Presence",
+        "desc": "By 2009, he gained recognition as a key strategist.",
+        "img": "/amit-4.jpeg"
+      }
+    ],
+    "stalwartSlider": [
+      {
+        "img": "/amit-1.jpeg",
+        "text": "Shri Amit Shah Ji is rich in energy, hard work, knowledge & efficiency",
+        "author": "Former Finance Minister, Arun Jaitley"
+      },
+      {
+        "img": "/amit-2.jpeg",
+        "text": "He is making tremendous efforts to ensure a safe and secure India",
+        "author": "Defense Minister, Rajnath Singh"
+      },
+      {
+        "img": "/amit-3.jpeg",
+        "text": "What Shri Amit Shah Ji did in Mission Kashmir operations is really commendable because it takes immense courage to carry out such activities.",
+        "author": "Actor, Rajinikanth"
+      },
+      {
+        "img": "/amit-4.jpeg",
+        "text": "Shri Amit Shah Ji is extremely dynamic and has got the clarity of vision and devotion to do the welfare of the country.",
+        "author": "Former Vice President, Venkaiah Naidu"
+      }
+    ],
+    "pressSection": {
+      "pressData": [
+        {
+          "id": 1,
+          "title": "‘Infiltrators can’t vote’: Shah backs Bihar SIR",
+          "date": "Aug 09, 2025",
+          "img": "/news-1.png"
+        },
+        {
+          "id": 2,
+          "title": "Shah slams Rahul, Lalu for ‘vote bank politics’ over SIR",
+          "date": "Aug 09, 2025",
+          "img": "/news-2.png"
+        },
+        {
+          "id": 3,
+          "title": "Bihar: सीतामढ़ी के पुनौरा धाम में 890 करोड़ का विकास",
+          "date": "Aug 08, 2025",
+          "img": "/news-3.png"
+        },
+        {
+          "id": 4,
+          "title": "बिहार में मतदाता सूची से घुसपैठियों को निकालने का उपाय",
+          "date": "Aug 08, 2025",
+          "img": "/news-4.png"
+        },
+        {
+          "id": 5,
+          "title": "वे बिहार के भाग्यविधाता हैं, माता सीता मंदिर मापुन",
+          "date": "Aug 08, 2025",
+          "img": "/news-5.png"
+        },
+        {
+          "id": 6,
+          "title": "Bihar: अमित शाह बोले - घुसपैठियों को हटाएंगे",
+          "date": "Aug 08, 2025",
+          "img": "/news-3.png"
+        }
+      ],
+      "popularPress": [
+        {
+          "id": 1,
+          "title": "NEP’s roots in Santiniketan education mo...",
+          "date": "May 10, 2023",
+          "img": "/news-1.png"
+        },
+        {
+          "id": 2,
+          "title": "Democracy reached to grassroots level in...",
+          "date": "Mar 02, 2023",
+          "img": "/news-2.png"
+        },
+        {
+          "id": 3,
+          "title": "‘Use tech to maintain maximum reach, spe...",
+          "date": "Mar 04, 2023",
+          "img": "/news-3.png"
+        },
+        {
+          "id": 4,
+          "title": "गृह मंत्री अमित शाह ने गुरुदेव को दी श्रद्धांजलि",
+          "date": "May 09, 2023",
+          "img": "/news-4.png"
+        }
+      ]
+    },
+    "eventsSection": {
+  "events": [
+    {
+      "id": 1,
+      "title": "HM Shri Amit Shah inaugurates new building of NIPER, Ahmedabad",
+      "date": "Sep 30, 2023",
+      "img": "/news-3.png"
+    },
+    {
+      "id": 2,
+      "title": "HM Amit Shah inaugurates various development projects of AMC and AUDA in Ahmedabad",
+      "date": "Sep 30, 2023",
+      "img": "/news-2.png"
+    }
+  ],
+  "watchLive": {
+    "tag": "LIVE NOW",
+    "thumbnail": "/amit-2.jpeg",
+    "title": "Union Home Minister and Minister of Cooperation",
+    "name": "Shri Amit Shah",
+    "status": "will be <span class='live-text'>Live Soon</span>",
+    "video": "amit.mp4"
+  }
+}
+
+  },
+  
+  "2": {
+    "page": "footer",
+    "newsletter": {
+      "title": "Get Exclusive News and Updates",
+      "placeholder": "Enter your email",
+      "buttonText": "Subscribe"
+    },
+    "quickLinks": [
+      { "name": "Home", "link": "/" },
+      { "name": "About", "link": "/about" },
+      { "name": "Gallery", "link": "/gallery" },
+      { "name": "Press", "link": "/press" },
+      { "name": "My View", "link": "/my-view" },
+      { "name": "Contact Us", "link": "/contact" }
+    ],
+    "donate": {
+      "title": "Donate Now",
+      "buttons": [
+        { "name": "PM CARES", "link": "https://www.pmcares.gov.in" },
+        { "name": "Bharat Ke Veer", "link": "https://www.bharatkeveer.gov.in" },
+        { "name": "BJP", "link": "https://www.bjp.org" }
+      ]
+    },
+    "follow": {
+      "title": "Follow Us",
+      "socialLinks": [
+        { "platform": "facebook", "icon": "FaFacebookF", "link": "https://facebook.com" },
+        { "platform": "x", "icon": "TbBrandX", "link": "https://x.com" },
+        { "platform": "instagram", "icon": "FaInstagram", "link": "https://instagram.com" },
+        { "platform": "youtube", "icon": "FaYoutube", "link": "https://youtube.com" },
+        { "platform": "whatsapp", "icon": "FaWhatsapp", "link": "https://wa.me" }
+      ]
+    },
+    "bottomText": "© 2023. All rights reserved. | Privacy Policy"
+  }
+}
+
+

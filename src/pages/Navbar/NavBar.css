@@ -1,0 +1,194 @@
+:root {
+  --black: #000000;
+  --red: #cc0200;
+  --white: #ffffff;
+  --orange: #ff7e54;
+}
+
+/* Navbar container */
+.NavBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--orange);
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.5s ease;
+  color: #fff;
+}
+
+/* Left side (Logo) */
+.NavLogo {
+  flex: 1; /* 50% */
+  display: flex;
+  align-items: center;
+}
+.LogoImage {
+  max-height: 50px;
+  padding: 10px 0;
+}
+
+/* Right side (Menu + Hamburger) */
+.NavContent {
+  flex: 1; /* 50% */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Navbar list */
+.NavBarList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar item */
+.NavBarItem {
+  margin: 0 20px;
+  position: relative;
+}
+
+/* Navbar link */
+.NavBarLink {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  position: relative;
+}
+.NavBarLink:hover,
+.NavBarLink.active {
+  color: var(--white);
+}
+
+/* Underline effect */
+.NavBarLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: var(--white);
+}
+.NavBarLink:hover::after,
+.NavBarLink.active::after {
+  transform: scaleX(1);
+}
+
+/* Chevron arrow */
+.ChevronIcon {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+  color: var(--white);
+}
+
+/* Submenu */
+.SubMenuList {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 3rem;
+  left: -3rem;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 220px;
+  border-radius: 4px;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
+  pointer-events: none;
+}
+.SubMenuList.show {
+  opacity: 1;
+  max-height: 500px;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.SubMenuItem {
+  padding: 10px 16px;
+}
+.SubMenuLink {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+.SubMenuLink:hover,
+.SubMenuLink.active {
+  color: var(--white);
+}
+
+/* Hamburger Button */
+.HamburgerBtn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+/* Popup Overlay */
+.PopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+/* Popup Menu */
+.PopupMenu {
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: slideIn 0.3s ease-in-out;
+}
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.CloseBtn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.PopupList {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+}
+.PopupItem {
+  margin: 1rem 0;
+}
+.PopupLink {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
+}
+.PopupLink:hover {
+  color: #007bff;
+}
