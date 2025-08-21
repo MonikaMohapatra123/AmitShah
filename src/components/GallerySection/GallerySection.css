@@ -183,37 +183,57 @@
 
 
 
-
 /* GLOBAL FIX */
 * {
   box-sizing: border-box;
 }
 
-/* MAIN WRAPPER */
 .gallery-wrap {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between; /* keeps left & right opposite */
   gap: 24px;
   align-items: flex-start;
   padding: 20px;
   color: #222;
-  flex-wrap: wrap;
-  overflow-x: hidden; /* ✅ prevent extra width */
   width: 100%;
   border-top: 1px solid #ff7e54;
   margin-top: 50px;
 }
 
-/* LEFT COL */
 .left-col {
-  flex: 0 0 70%;
-  min-width: 0;
+  flex: 0 0 70%;   /* left takes 70% */
+}
+
+.right-col {
+  flex: 0 0 28%;   /* right takes 30% */
+  min-width: 260px;
   max-width: 100%;
 }
 
+.biz-card {
+  border: 1px solid #ff7e54;
+  padding: 19px;
+  background-color: #ff7e54;
+  border-radius: 0 50px 50px 50px; /* rounded top-right + bottom corners */
+  color: #fff;
+  width: 100%;
+  margin-top: 90px;
+  position: sticky;
+  top: 100px;
+}
+.biz-card a{
+  text-decoration: none;
+}
+
+.biz-card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .left-col h2 {
-  /* margin: 20px 0 15px; */
   font-size: 22px;
   font-weight: 700;
   color:#ff7e54;
@@ -251,7 +271,7 @@
   max-height: 350px;
   scroll-behavior: smooth;
   width: 100%;
-  max-width: 120px; /* ✅ desktop safe width */
+  max-width: 120px;
   margin-top: -19px;
 }
 
@@ -282,78 +302,60 @@
   color: #ff7e54;
 }
 
-/* RIGHT COL */
-.right-col {
-  flex: 0 0 30%;
-  min-width: 260px;
-  max-width: 100%;
-  margin-left: 830px;
-}
 
-.biz-card {
-  border: 1px solid #eee;
-  padding: 14px;
-  background-color: #ff7e54;
-  border-radius: 0px 70px 70px 70px;
-  color: #fff;
-  position: sticky;
-  top: 100px;
-  width: 100%;
-
-}
-
-.biz-card h2 {
-  margin: 0 0 10px;
-  font-size: 20px;
-}
 .rating {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-size: 14px;
 }
+
 .book-now {
+  display: block;
   width: 100%;
   border: 2px solid white;
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 8px;
   color: #fff;
   font-weight: 500;
   margin: 8px 0;
+  text-align: center;
   cursor: pointer;
   background: transparent;
   transition: all 0.2s;
-
 }
+
 .book-now:hover {
   background: white;
   color: #ff7e54;
   font-weight: 600;
 }
 
+
 /* ====== RESPONSIVE BREAKPOINTS ====== */
 
-/* Tablet */
+/* Tablet ✅ KEEP side-by-side layout */
 @media screen and (max-width: 1024px) {
   .gallery-wrap {
-    flex-direction: column;
+    flex-direction: row; /* stay row, not column */
   }
-  .left-col,
+  .left-col {
+    flex: 0 0 65%;
+  }
   .right-col {
-    flex: 1 1 100%;
-    
+    flex: 0 0 33%;
+    display: block; /* keep visible */
   }
-    .right-col {
-        display: none;
-    }
   .biz-card {
     position: relative;
     top: auto;
-    margin-top: 20px;
     border-radius: 20px;
   }
 }
 
-/* Mobile */
+/* Mobile ✅ stack */
 @media screen and (max-width: 767px) {
+  .gallery-wrap {
+    flex-direction: column;
+  }
   .video-row {
     flex-direction: column;
     gap: 12px;
@@ -386,7 +388,7 @@
     flex-shrink: 0;
   }
   .nav-btn {
-    display: none; /* ✅ hide arrows on mobile */
+    display: none;
   }
   .right-col {
     min-width: 100%;

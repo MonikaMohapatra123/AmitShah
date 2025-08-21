@@ -7,7 +7,7 @@
       { "name": "Home", "link": "/" },
       { "name": "About", "link": "/about" },
       { "name": "Gallery", "link": "/gallery" },
-      { "name": "Press", "link": "/services" },
+      { "name": "Press", "link": "/press" },
       { "name": "Contact Us", "link": "/contact" },
       {
         "name": "EN",
@@ -206,7 +206,23 @@
     "status": "will be <span class='live-text'>Live Soon</span>",
     "video": "amit.mp4"
   }
+},
+"gallerySection": {
+  "photos": [
+    { "id": 1, "src": "/amit-1.jpeg" },
+    { "id": 2, "src": "/amit-2.jpeg" },
+    { "id": 3, "src": "/amit-3.jpeg" },
+    { "id": 4, "src": "/amit-4.jpeg" },
+    { "id": 5, "src": "/amit-1.jpg" }
+  ],
+  "defaultSelected": "/amit-1.jpeg",
+  "donateButtons": [
+    { "name": "PM CARES", "link": "https://www.pmcares.gov.in" },
+    { "name": "BHARAT KE VEER", "link": "https://www.bharatkeveer.gov.in" },
+    { "name": "BJP", "link": "https://www.bjp.org" }
+  ]
 }
+
 
   },
   
@@ -244,7 +260,134 @@
       ]
     },
     "bottomText": "© 2023. All rights reserved. | Privacy Policy"
+  },
+    "3": {
+    "page": "about",
+    "aboutIntro": {
+      "title": "Amitbhai Anilchandra Shah : An Introduction",
+      "paragraphs": [
+        "Amitbhai Anilchandra Shah, the former President of the Bharatiya Janata Party and India’s Home Minister, was born on 22 October 1964 to a Gujarati couple Mrs. Kusum Ben and Mr. Anilchandra Shah living in Mumbai. Amitbhai Anilchandra Shah’s grandfather was a wealthy merchant (Nagar Seth) in Mansa, a small princely state of Baroda State of Gaikwad. Till the age of 16, Amitbhai Anilchandra Shah lived in his native village Mansa in Gujarat. It is there where he received his primary education. The young Shah’s early education took place according to the 'Indian Value Tradition' under the supervision of prominent scholars of the Gaikwad State. He was taught Indian scriptures, historical texts, grammar and epics in his childhood. He continued to study Indian philosophy and texts even in the later years.",
+        "Amitbhai Anilchandra Shah’s family moved to Ahmedabad after the completion of his primary education. His mother had a deep influence in his life. She was an avid Gandhian and she inspired him to wear Khadi. In his youth, while during education, he read biographies of many patriots and was deeply influenced by their passion for the motherland. He has been greatly influenced by the writings of K.M. Munshi."
+      ],
+      "image": "/amit-1.jpeg"
+    },
+     "timeline": [
+      {
+        "year": 2001,
+        "title": "National Coordinator, Cooperative Wing, BJP",
+        "desc": "In 2001, Amit Shah was appointed as the National Coordinator of the Cooperative Wing of Bharatiya Janta Party. During this...",
+        "img": "/amit-1.jpeg"
+      },
+      {
+        "year": 2002,
+        "title": "Political Journey Continues",
+        "desc": "In 2002, he took part in major state-level campaigns and strengthened the party structure.",
+        "img": "/amit-2.jpeg"
+      },
+      {
+        "year": 2006,
+        "title": "Leadership Role",
+        "desc": "In 2006, he expanded his leadership role within the organization.",
+        "img": "/amit-3.jpeg"
+      },
+      {
+        "year": 2009,
+        "title": "National Presence",
+        "desc": "By 2009, he gained recognition as a key strategist.",
+        "img": "/amit-4.jpeg"
+      }
+    ]
+  },
+  "4": {
+  "page": "gallery",
+  "downloads": {
+    "title": "DOWNLOADS",
+    "images": [
+      "/amit-1.jpeg",
+      "/amit-2.jpeg",
+      "/amit-3.jpeg",
+      "/amit-4.jpeg",
+      "/amit-1.jpg",
+      "/news-2.png"
+    ]
   }
+},
+  "5": {
+   
+    "pressSection": {
+      "pressData": [
+        {
+          "id": 1,
+          "date": "Mar 22, 2022",
+          "title": "Mann Ki Baat' has transformed into a phenomenal platform to bring people together: Amit Shah",
+          "image": "/news-1.png"
+        },
+        {
+          "id": 2,
+          "date": "May 28, 2024",
+          "title": "PM Modi dedicates new Parliament building to nation, Amit Shah hails historic moment",
+          "image": "/news-2.png"
+        },
+        {
+          "id": 3,
+          "date": "Jun 18, 2023",
+          "title": "Amit Shah chairs high-level meeting on security situation in Jammu and Kashmir",
+          "image": "/news-3.png"
+        }
+      ],
+      "popularPress": [
+        {
+          "id": 1,
+          "title": "Amit Shah on India’s security measures",
+          "image": "/news-4.png"
+        },
+        {
+          "id": 2,
+          "title": "Reforms under Modi Government",
+          "image": "/news-5.png"
+        },
+        {
+          "id": 3,
+          "title": "Digital India initiatives by Amit Shah",
+          "image": "/news-1.png"
+        }
+      ]
+    }
+  }
+  ,"6": {
+  "page": "contact",
+  "form": {
+    "title": "Write to Us",
+    "fields": [
+      { "type": "text", "placeholder": "Your name" },
+      { "type": "email", "placeholder": "Email" },
+      { "type": "text", "placeholder": "Phone number" },
+      {
+        "type": "select",
+        "options": ["Select", "General Inquiry", "Support", "Feedback"]
+      },
+      { "type": "textarea", "placeholder": "Your message" }
+    ],
+    "buttonText": "SUBMIT"
+  },
+  "info": {
+    "address": "Ministry of Home Affairs, North Block, New Delhi - 110001 India",
+    "phone": ["011-23092462", "011-23094686"],
+    "email": "hm@mha.gov.in"
+  },
+  "socialLinks": [
+    { "platform": "facebook", "icon": "FaFacebookF", "link": "https://facebook.com" },
+    { "platform": "twitter", "icon": "FaTwitter", "link": "https://twitter.com" },
+    { "platform": "instagram", "icon": "FaInstagram", "link": "https://instagram.com" },
+    { "platform": "youtube", "icon": "FaYoutube", "link": "https://youtube.com" },
+    { "platform": "whatsapp", "icon": "FaWhatsapp", "link": "https://wa.me" }
+  ]
 }
+
+}
+
+
+
+
 
 

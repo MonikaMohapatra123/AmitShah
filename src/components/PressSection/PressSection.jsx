@@ -5,7 +5,7 @@ export default function PressSection({ pressData, popularPress }) {
   return (
     <div className="press-wrapper">
       {/* Top header with image button */}
-      <div className="press-header">
+      <div className="pressSection-header">
         <button className="press-btn">PRESS</button>
       </div>
 

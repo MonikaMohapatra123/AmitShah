@@ -17,6 +17,7 @@ const Home = () => {
   const stalwartSliderData = data["1"].stalwartSlider;
   const pressSectionData = data["1"].pressSection;
   const eventsSectionData = data["1"].eventsSection;
+  const gallerySectionData = data["1"].gallerySection;
 
   return (
     <div>
@@ -25,7 +26,7 @@ const Home = () => {
       <ImpactSection data={impactSectionData} />
       <Timeline data={timelineData} />
       <StalwartSlider data={stalwartSliderData} />
-      <GallerySection />
+      <GallerySection data={gallerySectionData}/>
       <PressSection
         pressData={pressSectionData.pressData}
         popularPress={pressSectionData.popularPress}
