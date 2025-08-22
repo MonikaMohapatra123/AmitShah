@@ -1,21 +1,21 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import "./MobileNavBar.css";
-import storedData from "../../json/data.json"; // ✅ JSON import
+import { useLanguage } from "../../pages/LanguageContext/LanguageContext"; // ✅ import context
 
 const MobileNavBar = () => {
+  const { data, toggleLanguage, language } = useLanguage(); // ✅ use language context
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const [menuData, setMenuData] = useState([]);
   const location = useLocation();
 
   useEffect(() => {
-    if (storedData && storedData["0"]) {
-      setMenuData(storedData["0"].menu);
+    if (data && data["0"]) {
+      setMenuData(data["0"].menu);
     }
-  }, []);
+  }, [data]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -33,12 +33,13 @@ const MobileNavBar = () => {
     return false;
   };
 
-  const storedLogo = storedData?.["0"]?.logo || "";
+  const storedLogo = data?.["0"]?.logo || "";
 
   return (
     <nav className="MobileNavBarContainer">
+      {/* Header with Logo + Hamburger */}
       <div className="MobileNavBarHeader">
-        <Link to="/">
+        <Link to="/" onClick={() => setMenuOpen(false)}>
           <img src={storedLogo} alt="Logo" className="MobileLogoImage" />
         </Link>
         <div className="MobileMenuIcon" onClick={toggleMenu}>
@@ -50,6 +51,7 @@ const MobileNavBar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu List */}
       <ul className={`MobileNavBarList ${menuOpen ? "show" : ""}`}>
         {menuData.map((item, index) => (
           <li key={index} className="MobileNavBarItem">
@@ -103,10 +105,16 @@ const MobileNavBar = () => {
             )}
           </li>
         ))}
+
+        {/* ✅ Language Toggle at Bottom */}
+        <li className="MobileNavBarItem lang-toggle">
+          <button className="MobileLangBtn" onClick={toggleLanguage}>
+            {language === "en" ? "हिंदी" : "EN"}
+          </button>
+        </li>
       </ul>
     </nav>
   );
 };
 
 export default MobileNavBar;
-

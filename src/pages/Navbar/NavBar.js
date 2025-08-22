@@ -237,7 +237,8 @@ const ResponsiveNavBar = () => {
         <Link to="/">
           <img src={data["0"].logo} alt="Logo" className="LogoImage" />
         </Link>
-        <h2>AMIT SHAH</h2>
+        {/* <h2>Anopkumar Pandey</h2> */}
+        <h2>ANOPKUMAR PANDEY</h2>
       </div>
 
       {/* Right: Menu + Hamburger */}
