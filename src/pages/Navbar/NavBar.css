@@ -21,7 +21,7 @@
 
 /* Left side (Logo) */
 .NavLogo {
-  flex: 1; /* 50% */
+  flex: 1;
   display: flex;
   align-items: center;
 }
@@ -32,7 +32,7 @@
 
 /* Right side (Menu + Hamburger) */
 .NavContent {
-  flex: 1; /* 50% */
+  flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -90,29 +90,31 @@
   transition: transform 0.3s ease;
   color: var(--white);
 }
+.ChevronIcon.rotate-up {
+  transform: rotate(180deg);
+}
 
 /* Submenu */
 .SubMenuList {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
+  display: none;
   position: absolute;
   top: 3rem;
-  left: -3rem;
-  background-color: white;
+  left: 0;
+  background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   min-width: 220px;
   border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
   transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
-  pointer-events: none;
+  transition: all 0.3s ease;
 }
 .SubMenuList.show {
+  display: block;
   opacity: 1;
-  max-height: 500px;
+  visibility: visible;
   transform: translateY(0);
-  pointer-events: auto;
 }
 .SubMenuItem {
   padding: 10px 16px;
@@ -126,7 +128,7 @@
 }
 .SubMenuLink:hover,
 .SubMenuLink.active {
-  color: var(--white);
+  color: var(--orange);
 }
 
 /* Hamburger Button */

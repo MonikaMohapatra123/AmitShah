@@ -32,7 +32,7 @@
 .about-image {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* keep image on right side for desktop */
   align-items: center;
 }
 
@@ -42,8 +42,7 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  margin-bottom: 100px;   /* remove fixed negative margin */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   margin-left: 0;
 }
 
@@ -63,7 +62,7 @@
   }
 
   .about-image img {
-    max-width: 300px;
+    max-width: 350px;
   }
 }
 
@@ -80,7 +79,8 @@
 
   .about-image {
     order: 1; /* image on top */
-    margin-top: 62px;
+    justify-content: center; /* center image */
+    margin-top: 20px;
   }
 
   .about-text h2 {
@@ -93,7 +93,7 @@
   }
 
   .about-image img {
-    max-width: 260px;
+    max-width: 240px; /* smaller image size for mobile */
   }
 }
 
@@ -112,6 +112,7 @@
   }
 
   .about-image img {
-    max-width: 220px;
+    max-width: 200px; /* more compact for very small screens */
+    margin-top: 40px;
   }
 }

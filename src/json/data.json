@@ -8,14 +8,7 @@
       { "name": "About", "link": "/about" },
       { "name": "Gallery", "link": "/gallery" },
       { "name": "Press", "link": "/press" },
-      { "name": "Contact Us", "link": "/contact" },
-      {
-        "name": "EN",
-        "submenu": [
-          { "name": "English", "link": "/english" },
-          { "name": "Hindi", "link": "/hindi" }
-        ]
-      }
+      { "name": "Contact Us", "link": "/contact" }
     ]
   },
   "1": {

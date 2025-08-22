@@ -9,8 +9,9 @@
 }
 
 .press-header h1 {
-  font-size: 60px;
-  font-weight: 700;
-  color: #ff7043; /* orange text */
-  margin: 0;
+  color: #ff7643; /* same orange as in image */
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }

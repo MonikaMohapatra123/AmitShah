@@ -8,8 +8,10 @@ import StalwartSlider from "../../components/StalwartSlider/StalwartSlider";
 import GallerySection from "../../components/GallerySection/GallerySection";
 import PressSection from "../../components/PressSection/PressSection";
 import EventsSection from "../../components/EventsSection/EventsSection";
+import { useLanguage } from "../LanguageContext/LanguageContext";
 
 const Home = () => {
+  const { data } = useLanguage();
   const heroSlides = data["1"].heroSlides;
   const aboutCompanyData = data["1"].aboutCompany;
   const impactSectionData = data["1"].impactSection;

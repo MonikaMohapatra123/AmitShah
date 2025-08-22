@@ -2,8 +2,10 @@ import React from 'react'
 import PressHeader from '../../components/PressHeader/PressHeader'
 import NewsPress from '../../components/NewsPress/NewsPress'
 import data from "../../json/data.json"; 
+import { useLanguage } from "../LanguageContext/LanguageContext";
 
 const Press = () => {
+const { data } = useLanguage();
   const pressSectionData = data["5"].pressSection;
   return (
     <div>

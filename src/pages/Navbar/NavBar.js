@@ -1,4 +1,4 @@
-// // src/components/NavBar/NavBar.js
+
 // import React, { useState, useEffect, useRef } from "react";
 // import { Link, useLocation } from "react-router-dom";
 // import { useMediaQuery } from "react-responsive";
@@ -11,7 +11,6 @@
 // const ResponsiveNavBar = () => {
 //   const [menu, setMenu] = useState([]);
 //   const [activeIndex, setActiveIndex] = useState(null);
-//   const [timeoutId, setTimeoutId] = useState(null);
 //   const [isScrolled, setIsScrolled] = useState(false);
 //   const [isPopupOpen, setIsPopupOpen] = useState(false);
 //   const location = useLocation();
@@ -23,26 +22,17 @@
 //       setMenu(localMenu);
 //     }
 
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 30);
-//     };
+//     const handleScroll = () => setIsScrolled(window.scrollY > 30);
 //     window.addEventListener("scroll", handleScroll);
 //     return () => window.removeEventListener("scroll", handleScroll);
 //   }, []);
 
-//   const handleSubMenuToggle = (index) => {
-//     if (timeoutId) clearTimeout(timeoutId);
+//   const handleMouseEnter = (index) => {
 //     setActiveIndex(index);
 //   };
 
 //   const handleMouseLeave = () => {
-//     const id = setTimeout(() => setActiveIndex(null), 2000);
-//     setTimeoutId(id);
-//   };
-
-//   const handleMouseEnter = (index) => {
-//     if (timeoutId) clearTimeout(timeoutId);
-//     handleSubMenuToggle(index);
+//     setActiveIndex(null);
 //   };
 
 //   const handleClickOutside = (event) => {
@@ -69,12 +59,15 @@
 //       className={`NavBarContainer ${isScrolled ? "scrolled" : "transparent"}`}
 //       ref={navRef}
 //     >
-//       {/* Logo */}
-//       <Link to="/">
-//         <img src={navbarData["0"].logo} alt="Logo" className="LogoImage" />
-//       </Link>
+//       {/* Left: Logo */}
+//       <div className="NavLogo">
+//         <Link to="/">
+//           <img src={navbarData["0"].logo} alt="Logo" className="LogoImage" />
+//         </Link>
+//         <h2>AMIT SAHA</h2>
+//       </div>
 
-//       {/* Menu */}
+//       {/* Right: Menu + Hamburger */}
 //       <div className="NavContent">
 //         <ul className="NavBarList">
 //           {menu.map((item, index) => (
@@ -93,7 +86,7 @@
 //                   {item.submenu && (
 //                     <FaChevronDown
 //                       className={`ChevronIcon ${
-//                         activeIndex === index ? "rotate-up" : "rotate-down"
+//                         activeIndex === index ? "rotate-up" : ""
 //                       }`}
 //                     />
 //                   )}
@@ -104,7 +97,7 @@
 //                   {item.submenu && (
 //                     <FaChevronDown
 //                       className={`ChevronIcon ${
-//                         activeIndex === index ? "rotate-up" : "rotate-down"
+//                         activeIndex === index ? "rotate-up" : ""
 //                       }`}
 //                     />
 //                   )}
@@ -135,24 +128,18 @@
 //             </li>
 //           ))}
 //         </ul>
-//       </div>
 
-//       {/* Hamburger Button */}
-//       <button
-//         className="HamburgerBtn"
-//         onClick={() => setIsPopupOpen(true)}
-//       >
-//         <FaBars />
-//       </button>
+//         {/* Hamburger Button */}
+//         <button className="HamburgerBtn" onClick={() => setIsPopupOpen(true)}>
+//           <FaBars />
+//         </button>
+//       </div>
 
 //       {/* Popup Menu */}
 //       {isPopupOpen && (
 //         <div className="PopupOverlay">
 //           <div className="PopupMenu">
-//             <button
-//               className="CloseBtn"
-//               onClick={() => setIsPopupOpen(false)}
-//             >
+//             <button className="CloseBtn" onClick={() => setIsPopupOpen(false)}>
 //               <FaTimes />
 //             </button>
 //             <ul className="PopupList">
@@ -189,7 +176,6 @@
 
 
 
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
@@ -197,44 +183,30 @@ import "./NavBar.css";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 
 import MobileNavBar from "./MobileNavBar";
-import navbarData from "../../json/data.json"; // ✅ import JSON directly
+import { useLanguage } from "../../pages/LanguageContext/LanguageContext";
 
 const ResponsiveNavBar = () => {
+  const { data, toggleLanguage, language } = useLanguage();
   const [menu, setMenu] = useState([]);
   const [activeIndex, setActiveIndex] = useState(null);
-  const [timeoutId, setTimeoutId] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
 
   useEffect(() => {
-    if (navbarData && navbarData["0"]) {
-      const localMenu = navbarData["0"].menu || [];
+    if (data && data["0"]) {
+      const localMenu = data["0"].menu || [];
       setMenu(localMenu);
     }
 
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [data]);
 
-  const handleSubMenuToggle = (index) => {
-    if (timeoutId) clearTimeout(timeoutId);
-    setActiveIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    const id = setTimeout(() => setActiveIndex(null), 2000);
-    setTimeoutId(id);
-  };
-
-  const handleMouseEnter = (index) => {
-    if (timeoutId) clearTimeout(timeoutId);
-    handleSubMenuToggle(index);
-  };
+  const handleMouseEnter = (index) => setActiveIndex(index);
+  const handleMouseLeave = () => setActiveIndex(null);
 
   const handleClickOutside = (event) => {
     if (navRef.current && !navRef.current.contains(event.target)) {
@@ -263,9 +235,9 @@ const ResponsiveNavBar = () => {
       {/* Left: Logo */}
       <div className="NavLogo">
         <Link to="/">
-          <img src={navbarData["0"].logo} alt="Logo" className="LogoImage" />
+          <img src={data["0"].logo} alt="Logo" className="LogoImage" />
         </Link>
-        <h2>AMIT SAHA</h2>
+        <h2>AMIT SHAH</h2>
       </div>
 
       {/* Right: Menu + Hamburger */}
@@ -287,7 +259,7 @@ const ResponsiveNavBar = () => {
                   {item.submenu && (
                     <FaChevronDown
                       className={`ChevronIcon ${
-                        activeIndex === index ? "rotate-up" : "rotate-down"
+                        activeIndex === index ? "rotate-up" : ""
                       }`}
                     />
                   )}
@@ -298,7 +270,7 @@ const ResponsiveNavBar = () => {
                   {item.submenu && (
                     <FaChevronDown
                       className={`ChevronIcon ${
-                        activeIndex === index ? "rotate-up" : "rotate-down"
+                        activeIndex === index ? "rotate-up" : ""
                       }`}
                     />
                   )}
@@ -330,11 +302,13 @@ const ResponsiveNavBar = () => {
           ))}
         </ul>
 
+        {/* Language Toggle */}
+        <button className="LangBtn" onClick={toggleLanguage}>
+          {language === "en" ? "हिंदी" : "EN"}
+        </button>
+
         {/* Hamburger Button */}
-        <button
-          className="HamburgerBtn"
-          onClick={() => setIsPopupOpen(true)}
-        >
+        <button className="HamburgerBtn" onClick={() => setIsPopupOpen(true)}>
           <FaBars />
         </button>
       </div>
@@ -343,10 +317,7 @@ const ResponsiveNavBar = () => {
       {isPopupOpen && (
         <div className="PopupOverlay">
           <div className="PopupMenu">
-            <button
-              className="CloseBtn"
-              onClick={() => setIsPopupOpen(false)}
-            >
+            <button className="CloseBtn" onClick={() => setIsPopupOpen(false)}>
               <FaTimes />
             </button>
             <ul className="PopupList">
