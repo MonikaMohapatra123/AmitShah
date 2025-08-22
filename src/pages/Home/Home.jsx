@@ -27,11 +27,11 @@ const Home = () => {
       <Timeline data={timelineData} />
       <StalwartSlider data={stalwartSliderData} />
       <GallerySection data={gallerySectionData}/>
-      <PressSection
+     <PressSection
         pressData={pressSectionData.pressData}
         popularPress={pressSectionData.popularPress}
       />
-      <EventsSection data={eventsSectionData} />
+       <EventsSection data={eventsSectionData} />
     </div>
   );
 };

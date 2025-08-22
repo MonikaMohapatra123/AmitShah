@@ -1,6 +1,6 @@
 /* src/components/ImpactSection.css */
 
-.impact-container {
+.impact-section-container {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
@@ -13,7 +13,7 @@
 }
 
 /* Circle */
-.circle {
+.impact-circle {
   width: 350px;
   min-height: 350px;
   border: 2px solid #ff7043;
@@ -30,21 +30,20 @@
   overflow: hidden;
   margin-top: 30px;
 }
-
-.circle:hover {
+.impact-circle:hover {
   background: #fff;
   color: #ff7043;
 }
 
 /* Cards container */
-.cards-container {
+.impact-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
   flex: 1;
 }
 
-.card {
+.impact-card {
   border: 1px solid #ff7043;
   border-radius: 10px;
   padding: 20px;
@@ -54,25 +53,24 @@
   position: relative;
   background: #fff;
 }
-
-.card:hover {
+.impact-card:hover {
   transform: translateY(-6px);
 }
 
 /* Dropdown toggle */
-.dropdown-toggle {
+.impact-dropdown-toggle {
   margin-top: 10px;
   font-size: 20px;
   color: #ff7043;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
-.dropdown-toggle:hover {
+.impact-dropdown-toggle:hover {
   transform: scale(1.2);
 }
 
 /* Dropdown content */
-.dropdown-content {
+.impact-dropdown-content {
   margin-top: 12px;
   padding: 16px;
   border-top: 1px solid #ff7043;
@@ -85,45 +83,45 @@
 }
 
 /* Close button inside dropdown */
-.close-btn {
+.impact-close-btn {
   position: absolute;
   top: 6px;
-  right: 8px;
+  right: 10px;
   background: transparent;
   border: none;
   color: #ff7043;
   font-size: 18px;
   cursor: pointer;
 }
-.close-btn:hover {
+.impact-close-btn:hover {
   color: #e64a19;
 }
 
 /* ===== Animated Border Edges ===== */
-.edge {
+.impact-edge {
   position: absolute;
   background: #ff7043;
   opacity: 0;
 }
-.edge.left {
+.impact-edge.left {
   top: 0;
   left: 0;
   width: 4px;
   height: 100%;
 }
-.edge.top {
+.impact-edge.top {
   top: 0;
   left: 0;
   width: 100%;
   height: 4px;
 }
-.edge.right {
+.impact-edge.right {
   top: 0;
   right: 0;
   width: 4px;
   height: 100%;
 }
-.edge.bottom {
+.impact-edge.bottom {
   bottom: 0;
   left: 0;
   width: 100%;
@@ -131,19 +129,19 @@
 }
 
 /* animation triggers */
-.animated:hover .edge.left {
+.animated:hover .impact-edge.left {
   animation: showEdge 2s infinite;
   animation-delay: 0s;
 }
-.animated:hover .edge.top {
+.animated:hover .impact-edge.top {
   animation: showEdge 2s infinite;
   animation-delay: 0.5s;
 }
-.animated:hover .edge.right {
+.animated:hover .impact-edge.right {
   animation: showEdge 2s infinite;
   animation-delay: 1s;
 }
-.animated:hover .edge.bottom {
+.animated:hover .impact-edge.bottom {
   animation: showEdge 2s infinite;
   animation-delay: 1.5s;
 }
@@ -158,11 +156,11 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .impact-container {
+  .impact-section-container {
     flex-direction: column;
     align-items: center;
   }
-  .circle {
+  .impact-circle {
     width: 280px;
     min-height: 280px;
   }

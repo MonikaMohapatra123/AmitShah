@@ -1,12 +1,17 @@
-/* Wrapper */
+/* -------- GLOBAL RESET -------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* WRAPPER */
 .press-wrapper {
   width: 100%;
   margin-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
-/* Top Header with Button */
+/* HEADER */
 .pressSection-header {
   display: flex;
   justify-content: space-between;
@@ -23,32 +28,20 @@
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
-  padding-left: 20px;
+  transition: background 0.3s ease;
 }
 
 .press-btn:hover {
   background: #ff5c2b;
 }
 
-.press-more {
-  color: #ff7e54;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.press-more:hover {
-  text-decoration: underline;
-}
-
-/* ---------------- Existing Styles ---------------- */
+/* -------- PRESS CONTAINER -------- */
 .press-container {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  gap: 30px; /* Extra spacing for right side */
 }
 
-/* Left grid */
+/* LEFT GRID */
 .press-grid {
   flex: 3;
   display: grid;
@@ -56,7 +49,7 @@
   gap: 20px;
 }
 
-/* Each card */
+/* EACH PRESS CARD */
 .press-card {
   background: #fff;
   border-radius: 10px;
@@ -67,9 +60,8 @@
 }
 
 .press-card:hover {
-  background: #ff7e54;
-  color: #fff;
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .press-img {
@@ -79,114 +71,164 @@
 }
 
 .press-content {
-  padding: 15px;
+  padding: 12px;
 }
 
 .press-content h3 {
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.press-card:hover .press-content h3 {
+  color: #ff7e54;
 }
 
 .press-date {
-  font-size: 14px;
+  font-size: 13px;
   color: gray;
 }
 
-/* Right sidebar */
+/* -------- POPULAR PRESS SECTION -------- */
 .popular-press {
   flex: 1;
   background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   height: fit-content;
+  position: sticky;
+  top: 90px; /* Keeps sidebar visible */
 }
 
-.popular-press h3 {
+.popular-heading {
   font-size: 18px;
+  font-weight: bold;
   margin-bottom: 15px;
+  color: #ff7e54;
+  border-bottom: 2px solid #ff7e54;
+  padding-bottom: 6px;
 }
 
-/* Each popular card */
+/* LIST INSIDE POPULAR PRESS */
+.popular-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* EACH POPULAR ITEM */
 .popular-card {
   display: flex;
   align-items: center;
   gap: 12px;
-  border-bottom: 1px solid #eee;
-  padding: 10px 0;
-  transition: background 0.3s;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .popular-card:hover {
   background: #ff7e54;
   color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 
 .popular-img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
   object-fit: cover;
+  border: 2px solid #f1f1f1;
+  flex-shrink: 0;
 }
 
-.popular-text p {
-  margin: 0;
+/* POPULAR TEXT */
+.popular-text {
+  flex: 1;
+}
+
+.popular-title {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
 }
 
-.popular-text span {
+.popular-card:hover .popular-title {
+  color: #fff;
+}
+
+.popular-date {
   display: block;
   font-size: 12px;
   color: gray;
   margin-top: 4px;
+  transition: color 0.3s ease;
 }
 
-/* ---------------- Responsive ---------------- */
+.popular-card:hover .popular-date {
+  color: #fff;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Tablets */
 @media (max-width: 1023px) {
   .press-container {
     flex-direction: column;
   }
+
   .press-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
+
   .popular-press {
     width: 100%;
     margin-top: 20px;
+    position: relative;
+    top: 0;
   }
 }
 
+/* Mobile */
 @media (max-width: 767px) {
-  .press-container {
-    padding: 10px;
-  }
   .press-grid {
     grid-template-columns: 1fr;
   }
+
   .press-card {
     font-size: 14px;
   }
+
   .press-content h3 {
     font-size: 14px;
   }
+
   .press-date {
     font-size: 12px;
   }
+
   .popular-press {
-    padding: 10px;
+    padding: 12px;
   }
-  .popular-press h3 {
+
+  .popular-heading {
     font-size: 16px;
   }
+
   .popular-img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
-  .popular-text p {
+
+  .popular-title {
     font-size: 13px;
   }
-  .popular-text span {
+
+  .popular-date {
     font-size: 11px;
   }
 }

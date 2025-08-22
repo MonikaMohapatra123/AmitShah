@@ -4,7 +4,7 @@ import "./PressSection.css";
 export default function PressSection({ pressData, popularPress }) {
   return (
     <div className="press-wrapper">
-      {/* Top header with image button */}
+      {/* Top header with button */}
       <div className="pressSection-header">
         <button className="press-btn">PRESS</button>
       </div>
@@ -23,18 +23,20 @@ export default function PressSection({ pressData, popularPress }) {
           ))}
         </div>
 
-        {/* Right Sidebar */}
+        {/* Right Sidebar - Popular Press */}
         <div className="popular-press">
-          <h3>Popular Press</h3>
-          {popularPress.map((p) => (
-            <div key={p.id} className="popular-card">
-              <img src={p.img} alt={p.title} className="popular-img" />
-              <div className="popular-text">
-                <p>{p.title}</p>
-                <span>{p.date}</span>
+          <h3 className="popular-heading">Popular Press</h3>
+          <div className="popular-list">
+            {popularPress.map((p) => (
+              <div key={p.id} className="popular-card">
+                <img src={p.img} alt={p.title} className="popular-img" />
+                <div className="popular-text">
+                  <p className="popular-title">{p.title}</p>
+                  <span className="popular-date">{p.date}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
