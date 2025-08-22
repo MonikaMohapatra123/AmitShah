@@ -9,6 +9,7 @@
 .press-wrapper {
   width: 100%;
   margin-top: 20px;
+  padding: 0 40px;  /* ✅ Added horizontal space */
 }
 
 /* HEADER */
@@ -38,7 +39,7 @@
 /* -------- PRESS CONTAINER -------- */
 .press-container {
   display: flex;
-  gap: 30px; /* Extra spacing for right side */
+  gap: 30px;
 }
 
 /* LEFT GRID */
@@ -99,7 +100,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   height: fit-content;
   position: sticky;
-  top: 90px; /* Keeps sidebar visible */
+  top: 90px;
 }
 
 .popular-heading {
@@ -195,6 +196,10 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+  .press-wrapper {
+    padding: 0 15px;  /* ✅ Reduced padding for small screens */
+  }
+
   .press-grid {
     grid-template-columns: 1fr;
   }

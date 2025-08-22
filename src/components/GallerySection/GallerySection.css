@@ -21,14 +21,19 @@
 .gallery-title {
   font-size: 22px;
   font-weight: 700;
-  color: #ff7e54;
+  color:white;
   margin-bottom: 12px;
+  background-color: #ff7e54;
+  border-radius: 20px 0px 20px 0px;
+  display: inline-block;
+  padding: 10px;
 }
 
 .gallery-content {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  
 }
 
 /* BIG IMAGE */
@@ -167,9 +172,13 @@
     /* padding: 15px; */
    
   }
+  .gallery-title{
+    margin-left: 20px;
+  }
 
   .gallery-content {
     flex-direction: column;
+    margin-left: 20px;
   }
 
   .gallery-slider-column {

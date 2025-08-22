@@ -1,11 +1,14 @@
+/* ================== CONTAINER ================== */
 .stalwart-slider-container {
   width: 95%;
   margin: auto;
   position: relative;
   font-family: Arial, sans-serif;
   border-top: 1px solid #f98965;
+  padding: 10px 0;
 }
 
+/* ================== HEADER ================== */
 .stalwart-slider-header {
   display: flex;
   justify-content: space-between;
@@ -19,9 +22,11 @@
   padding: 8px 15px;
   border-radius: 15px 15px 15px 0;
   font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* SLIDER */
+/* ================== SLIDER ================== */
 .stalwart-slider-wrapper {
   overflow: hidden;
   width: 100%;
@@ -41,6 +46,12 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.stalwart-slide:hover {
+  transform: translateY(-4px);
 }
 
 .stalwart-slide-img {
@@ -61,16 +72,16 @@
   color: #000;
   line-height: 1.4;
   font-weight: 500;
+  margin-bottom: 8px;
 }
 
 .stalwart-slide-author {
   font-size: 12px;
   font-weight: bold;
   color: #555;
-  margin-top: 8px;
 }
 
-/* BUTTONS */
+/* ================== BUTTONS ================== */
 .stalwart-slider-buttons {
   position: absolute;
   top: 50%;
@@ -78,6 +89,8 @@
   transform: translateY(-50%);
   display: flex;
   gap: 8px;
+  margin-top: -45px;
+  z-index: 10;
 }
 
 .stalwart-slider-buttons button {
@@ -87,19 +100,26 @@
   font-size: 18px;
   cursor: pointer;
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  transition: 0.3s;
-  margin-top: -80px;
+  width: 36px;
+  height: 36px;
+
+  /* PERFECTLY CENTER THE ICON */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .stalwart-slider-buttons button:hover {
   background: #d75a3a;
+  transform: scale(1.08);
 }
 
 /* ================== RESPONSIVE ================== */
 
-/* Tablet (2 cards visible) */
+/* ---------- Tablet (2 cards visible) ---------- */
 @media (max-width: 1024px) {
   .stalwart-slide-text {
     font-size: 13px;
@@ -108,9 +128,15 @@
   .stalwart-slide-author {
     font-size: 11px;
   }
+
+  .stalwart-slider-buttons button {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
 }
 
-/* Mobile (1 card visible, buttons in a row) */
+/* ---------- Mobile (1 card visible, buttons top-right) ---------- */
 @media (max-width: 768px) {
   .stalwart-slide {
     flex-direction: column;
@@ -133,13 +159,24 @@
     font-size: 12px;
   }
 
-  /* Buttons stay side by side in one row */
+  /* Place buttons at top-right corner */
   .stalwart-slider-buttons {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
+    top: 10px;
+    right: 10px;
+    transform: none;
     flex-direction: row;
-    margin-bottom: -50px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .stalwart-slider-buttons button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+
+    /* Keep icons perfectly centered on mobile */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
