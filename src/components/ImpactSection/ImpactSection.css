@@ -92,6 +92,7 @@
   color: #ff7043;
   font-size: 18px;
   cursor: pointer;
+  z-index: 10; /* make sure it's above content */
 }
 .impact-close-btn:hover {
   color: #e64a19;
@@ -154,14 +155,26 @@
   100% { opacity: 0; }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .impact-section-container {
     flex-direction: column;
     align-items: center;
   }
+
   .impact-circle {
     width: 280px;
     min-height: 280px;
+  }
+
+  /* ✅ Fix: push cross further right */
+  .impact-dropdown-content {
+    position: relative;
+    padding-top: 30px; /* extra space so text doesn't overlap */
+  }
+
+  .impact-close-btn {
+    top: 8px;
+    right: -4px;  /* move further outwards */
+    font-size: 24px; /* bigger for touch */
   }
 }
